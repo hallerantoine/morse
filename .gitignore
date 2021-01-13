@@ -5,3 +5,6 @@ morse
 build/class.o
 build/morsetexte.o
 .vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+main

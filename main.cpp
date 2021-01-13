@@ -8,9 +8,9 @@ int main(){
 
     texte t;
     t.init_dicos();
-    t.set_fr("AB A B");
-    t.trad_fr_to_mo();
-    std::string res=t.get_mo();
+    t.set_mo("._ _...   ._");
+    t.trad_mo_to_fr();
+    std::string res=t.get_fr();
 
     std::cout << res << "\n";
     return 0;

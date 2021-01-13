@@ -17,6 +17,7 @@ class texte{
     void set_mo(std::string entree_mo);
 
     std::string get_mo();
+    std::string get_fr();
 
     void trad_fr_to_mo();
     void trad_mo_to_fr();
