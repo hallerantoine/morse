@@ -1,2 +1,7 @@
 a.out
 notesperso.md
+libmorse.a
+morse
+build/class.o
+build/morsetexte.o
+.vscode/settings.json
