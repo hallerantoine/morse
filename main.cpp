@@ -3,15 +3,19 @@
 #include <string>
 #include "src/class.cpp"
 #include "src/morsetexte.cpp"
+#include "src/wave.cpp"
 
-int main(){
+int main(int argc, char *argv[]){
 
-    texte t;
+    texte t;    
     t.init_dicos();
-    t.set_mo("._ _...   ._");
-    t.trad_mo_to_fr();
-    std::string res=t.get_fr();
+    t.set_fr("BONJOUR AU REVOIR");
+    t.trad_fr_to_mo();
+    std::string mo=t.get_mo();
 
-    std::cout << res << "\n";
+    wave w;
+    w.morse_to_wave(mo);
+
+
     return 0;
 }

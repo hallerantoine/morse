@@ -8,3 +8,6 @@ build/morsetexte.o
 .vscode/launch.json
 .vscode/tasks.json
 main
+essai.wav
+son.wav
+build/wave.o
