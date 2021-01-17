@@ -23,8 +23,8 @@ void wave::morse_to_wave(std::string mo){
     ofstream fichier ( "son.wav", ios::binary);
 
 
-    /*initialisaion du fichier, on remplacera xxxx avec la taille du fichier et yyyy à la fin*/
-    fichier << "RIFFxxxxWAVEfmt ";
+    /*initialisaion du fichier, on remplacera zzzz avec la taille du fichier et yyyy à la fin*/
+    fichier << "RIFFzzzzWAVEfmt ";
     write_word(fichier,16,4);
     write_word(fichier,AudioFormat,2);
     write_word(fichier,NbrCanaux,2);
