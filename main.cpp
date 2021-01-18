@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
     std::string mo=t.get_mo();
 
     wave w;
-    w.morse_to_wave(mo);
+    w.morse_to_wave(mo,"bonjour.wav");
 
 
 

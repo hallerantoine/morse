@@ -11,7 +11,7 @@ class texte{
     void remplir_fr_to_mo();
     void remplir_mo_to_fr();
 
-    std::string afficher();
+    std::string test();
 
     void set_fr(std::string entree_fr);
     void set_mo(std::string entree_mo);

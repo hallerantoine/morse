@@ -7,7 +7,7 @@
 class wave{
 
     public:
-    void morse_to_wave(std::string mo);
+    void morse_to_wave(std::string mo,std::string titre);
 
     private:
     /*j'utilise les noms utilisés dans la page Wikipédia pour s'y retrouver*/

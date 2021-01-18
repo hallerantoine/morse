@@ -19,8 +19,8 @@ using namespace little_endian_io;
 
 
 
-void wave::morse_to_wave(std::string mo){
-    ofstream fichier ( "son.wav", ios::binary);
+void wave::morse_to_wave(std::string mo, std::string titre){
+    ofstream fichier ( titre, ios::binary);
 
 
     /*initialisaion du fichier, on remplacera zzzz avec la taille du fichier et yyyy à la fin*/

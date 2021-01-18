@@ -88,7 +88,7 @@ mo_to_fr[fr_to_mo["8"]]="8";
 mo_to_fr[fr_to_mo["9"]]="9";
 }
 
-std::string texte::afficher(){
+std::string texte::test(){
     return fr.append("C");
 }
 
