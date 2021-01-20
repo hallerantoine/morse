@@ -15,14 +15,14 @@ class wave{
     int NbrCanaux=1;
     int Frequence=11025;
     int BytePerSec=11025;
-    int BytePerBloc=1;
-    int BitsPerSample=8;
+    int BytePerBloc=2;
+    int BitsPerSample=16;
 
 
     int LongueurElementaire=150; /*en ms*/
     double AmplitudeMax= 32760;
     double FrequenceFloat=11025;
-    double FrequenceNote= 55; /*la standard*/
+    double FrequenceNote= 440; /*la standard*/
     const double pi = 3.141592653589793238463; 
 
 };

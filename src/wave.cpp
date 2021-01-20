@@ -39,22 +39,22 @@ void wave::morse_to_wave(std::string mo, std::string titre){
         /* Si c'est un point*/
         if (int(mo[i])==46){
             int duree=Frequence*LongueurElementaire/1000;
-            for (int i=0; i<duree; i++){
-                write_word(fichier,(int)(AmplitudeMax * sin(2*pi*FrequenceNote/FrequenceFloat) ),2);
+            for (int j=0; j<duree; j++){
+                write_word(fichier,(int)(AmplitudeMax * sin(2*pi*j*FrequenceNote/FrequenceFloat) ),2);
             }
             /*il faut rajouter un petit temps*/
-            for (int i=0; i<duree; i++){
+            for (int j=0; j<duree; j++){
                 write_word(fichier,(int)(0) ,2);
             }
         }
        /* Si c'est un underscore*/
         else if (int(mo[i])==95){
             int duree=Frequence*LongueurElementaire/1000;
-            for (int i=0; i<3*duree; i++){
-                write_word(fichier,(int)(AmplitudeMax * sin(2*pi*FrequenceNote/FrequenceFloat) ),2);
+            for (int j=0; j<3*duree; j++){
+                write_word(fichier,(int)(AmplitudeMax * sin(2*pi*j*FrequenceNote/FrequenceFloat) ),2);
             }
             /*il faut rajouter un petit temps*/
-            for (int i=0; i<duree; i++){
+            for (int j=0; j<duree; j++){
                 write_word(fichier,(int)(0) ,2);
             }
 
@@ -63,7 +63,7 @@ void wave::morse_to_wave(std::string mo, std::string titre){
         /* Si c'est un espace*/
         else if (int(mo[i])==32){
            int duree=Frequence*LongueurElementaire/1000;
-            for (int i=0; i<duree; i++){
+            for (int j=0; j<duree; j++){
                 write_word(fichier,(int)(0) ,2);
             }
         }
