@@ -14,7 +14,12 @@ int main(int argc, char *argv[]){
     std::string mo=t.get_mo();
 
     wave w;
+
     w.morse_to_wave(mo,"bonjour.wav");
+    w.read_wav("bonjour.wav");
+    int res = w.get_size();
+
+    std::cout<<res<<std::endl;
 
 
 

@@ -7,16 +7,33 @@
 class wave{
 
     public:
+    void set_standard_wave();
+
     void morse_to_wave(std::string mo,std::string titre);
+
+    void read_wav(char* titre);
+
+    int get_size();
+
 
     private:
     /*j'utilise les noms utilisés dans la page Wikipédia pour s'y retrouver*/
+    int FileSize=0;
+    int BlocSize=16;
     int AudioFormat=1;
     int NbrCanaux=1;
     int Frequence=11025;
     int BytePerSec=11025;
     int BytePerBloc=2;
     int BitsPerSample=16;
+    int DataSize=44;
+
+
+
+    char RIFF[4] = {0};
+    char WAVE[4] = {0};
+    char fmt[4] = {0};
+    char data[4] = {0};
 
 
     int LongueurElementaire=150; /*en ms*/
