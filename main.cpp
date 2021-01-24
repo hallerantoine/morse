@@ -9,17 +9,18 @@ int main(int argc, char *argv[]){
 
     texte t;    
     t.init_dicos();
-    t.set_fr("BONJOUR AU REVOIR");
+    t.set_fr("BONJOUR");
     t.trad_fr_to_mo();
     std::string mo=t.get_mo();
 
     wave w;
 
     w.morse_to_wave(mo,"bonjour.wav");
-    w.read_wav("bonjour.wav");
-    int res = w.get_size();
+    std::string res = w.read_wav("bonjour.wav");
 
-    std::cout<<res<<std::endl;
+    
+    std::cout<< res << "\n";
+    std::cout<<mo<<"\n";
 
 
 

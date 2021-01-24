@@ -11,7 +11,7 @@ class wave{
 
     void morse_to_wave(std::string mo,std::string titre);
 
-    void read_wav(char* titre);
+    std::string read_wav(std::string titre);
 
     int get_size();
 
@@ -28,7 +28,9 @@ class wave{
     int BitsPerSample=16;
     int DataSize=44;
 
+    int ret=0;
 
+    std::vector<int> son;
 
     char RIFF[4] = {0};
     char WAVE[4] = {0};

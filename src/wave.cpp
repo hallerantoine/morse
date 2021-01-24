@@ -99,7 +99,7 @@ void wave::morse_to_wave(std::string mo, std::string titre){
 
 
 
-void wave::read_wav(char* titre){
+std::string wave::read_wav(std::string titre){
     std::ifstream fichier (titre, ios::binary);
 
     fichier.read(reinterpret_cast<char *>(&RIFF), sizeof(RIFF));
@@ -115,11 +115,76 @@ void wave::read_wav(char* titre){
     fichier.read(reinterpret_cast<char *>(&data), sizeof(data));
     fichier.read(reinterpret_cast<char *>(&DataSize), 4);
 
+    
+    int son1=0;
+
+    int son2=0;
+    
+    int son3=1;
+
+    int son_next=0;
+
+       
+    std::string res_mo;
+
+    int duree=1651;
+
+    bool silence=false;
+
+    int temps_silence=0;
+    int temps_non_silence=0;
+
+    for (int i=0; i<DataSize/BytePerBloc; i++){
+        fichier.read(reinterpret_cast<char *>(&son_next), 2);
+        son1=son2;
+        son2=son3;
+        son3=son_next;
+
+        if (silence){
+            if (son1==0 && son2==0 && son3==0){
+                temps_silence+=1;
+            }
+            else{
+                int nombre_espaces=(int)(temps_silence/duree);
+                if (nombre_espaces>1){
+                for (int j=0; j< nombre_espaces-1;j++){
+                    res_mo.append(" ");
+                }
+                }
+                silence=false;
+                temps_silence=0;
+            }
+            
+
+        }
+        else{
+            if (son1==0 && son2==0 && son3==0){
+                int nombre_non_silence=(int)(temps_non_silence/duree+0.5);
+                std::cout<<temps_non_silence<<std::endl;
+                if (nombre_non_silence==1){
+                    res_mo.append(".");
+                }
+                else{
+                    res_mo.append("_");
+                }
+                temps_non_silence=0;
+                
+                silence=true;
+            }
+            else{
+                temps_non_silence+=1;
+            }
+
+        }
+
+
+    }
 
 
     fichier.close();
+    return res_mo;
 }
 
 int wave::get_size(){
-    return FileSize;
+    return DataSize;
 }
