@@ -127,7 +127,10 @@ std::string wave::read_wav(std::string titre){
        
     std::string res_mo;
 
-    int duree=1651;
+    int duree=LongueurElementaire*(int)(FrequenceFloat)/1000;
+
+
+
 
     bool silence=false;
 
@@ -145,7 +148,7 @@ std::string wave::read_wav(std::string titre){
                 temps_silence+=1;
             }
             else{
-                int nombre_espaces=(int)(temps_silence/duree);
+                int nombre_espaces=(int)((float)temps_silence/(float)duree+0.5);
                 if (nombre_espaces>1){
                 for (int j=0; j< nombre_espaces-1;j++){
                     res_mo.append(" ");
@@ -160,7 +163,7 @@ std::string wave::read_wav(std::string titre){
         else{
             if (son1==0 && son2==0 && son3==0){
                 int nombre_non_silence=(int)(temps_non_silence/duree+0.5);
-                std::cout<<temps_non_silence<<std::endl;
+
                 if (nombre_non_silence==1){
                     res_mo.append(".");
                 }
